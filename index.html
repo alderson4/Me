@@ -1,160 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArYaN-Troll</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fsociety | ArYaN Troll</title>
+    <style>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 35px 25px 30px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
 
-body{
-    font-family:'Share Tech Mono', monospace;
-    background:#000;
-    color:#fff;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-}
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-/* background glow */
-.background{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:radial-gradient(circle at top left, rgba(0,255,136,.15), transparent 40%);
-    z-index:-1;
-}
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+        }
 
-.container{
-    width:90%;
-    max-width:700px;
-    padding:40px;
-    text-align:center;
+        .name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
 
-    background:rgba(255,255,255,0.03);
-    border:1px solid rgba(0,255,136,0.2);
-    border-radius:20px;
+        .title {
+            font-size: 16px;
+            color: #667eea;
+            margin: 5px 0 15px 0;
+            font-weight: 500;
+        }
 
-    box-shadow:0 0 30px rgba(0,255,136,0.1);
-}
+        .bio {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
 
-.logo{
-    font-size:4rem;
-}
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
 
-.f{
-    color:#00ff88;
-    text-shadow:0 0 15px #00ff88;
-}
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
 
-.name{
-    margin-top:10px;
-    color:#aaa;
-}
+        .social-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
 
-#typing{
-    margin:20px 0;
-    color:#00ff88;
-    min-height:20px;
-}
+        .telegram {
+            background: #0088cc;
+        }
 
-.links{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    margin-top:25px;
-}
+        .channel {
+            background: #2aabee;
+        }
 
-.links a{
-    text-decoration:none;
-    color:#fff;
-    border:1px solid #00ff88;
-    padding:14px;
-    border-radius:10px;
-    transition:0.3s;
-}
+        .contact-btn {
+            display: block;
+            margin-top: 20px;
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3;
+        }
 
-.links a:hover{
-    background:#00ff88;
-    color:#000;
-    transform:scale(1.03);
-}
+        .contact-btn:hover {
+            background: #5a67d8;
+            transform: scale(1.02);
+        }
 
-.footer{
-    margin-top:25px;
-    font-size:0.8rem;
-    color:#666;
-}
+        .icon {
+            font-size: 22px;
+        }
 
-/* mobile */
-@media(max-width:600px){
-    .logo{
-        font-size:2.8rem;
-    }
+        @media (max-width: 480px) {
+            .card {
+                padding: 25px 15px 20px 15px;
+            }
 
-    .container{
-        padding:25px;
-    }
-}
-</style>
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .name {
+                font-size: 22px;
+            }
+
+            .title {
+                font-size: 14px;
+            }
+
+            .bio {
+                font-size: 13px;
+            }
+
+            .social-btn {
+                font-size: 13px;
+                padding: 10px;
+            }
+
+            .contact-btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    
+    <div class="card">
 
-<div class="background"></div>
+        <img class="profile-img" src="me.img" alt="عکس">
 
-<div class="container">
+        <h1 class="name">ArYaN-Troll</h1>
 
-    <h1 class="logo">
-        <span class="f">F</span>society
-    </h1>
+        <p class="title">توسعه دهنده بدافزار👨‍💻</p>
 
-    <h2 class="name">ArYaN Troll</h2>
+        <p class="bio">hello friend , hello friend</p>
 
-    <p id="typing"></p>
+        <div class="social-links">
 
-    <div class="links">
+            <a href="#" class="social-btn instagram">
+                <span class="icon">اینستاگرامم</span>
+            </a>
 
-        <a href="https://www.instagram.com/aryan.mh19?igsh=eXRneXY0aDcyNms=" target="_blank">Instagram</a>
-        <a href="https://t.me/aryan_mh191" target="_blank">Telegram</a>
-        <a href="YOUR_GITHUB_LINK" target="_blank">GitHub</a>
-        <a href="https://t.me/aryan_mh901" target="_blank">Telegram Channel</a>
-        <a href="kevin10asli10@gmail.com">Email</a>
+            <a href="#" class="social-btn telegram">
+                <span class="icon">تلگرامم</span>
+            </a>
 
+            <a href="#" class="social-btn channel">
+                <span class="icon">چنل تلگرامم</span>
+            </a>
+        </div>
+
+        <a href="#" class="contact-btn">تماس با من</a>
     </div>
-
-    <div class="footer">
-        We Are Fsociety
-    </div>
-
-</div>
-
-<script>
-    const text = "Grow in cilence.";
-
-let i = 0;
-const typing = document.getElementById("typing");
-
-function typeWriter(){
-    if(i < text.length){
-        typing.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 80);
-    }
-}
-
-typeWriter();
-</script>
-
 </body>
 </html>
